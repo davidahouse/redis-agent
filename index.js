@@ -63,11 +63,7 @@ class RedisAgent {
         if (config.heartbeatPrefix != null) {
           heartbeatPrefix = config.heartbeatPrefix + '_'
         }
-        let agentName = ''
-        if (config.agentName != null) {
-          agentName = config.agentName + '_'
-        }
-        const heartbeatEvent = heartbeatPrefix + agentName + 'heartbeat'
+        const heartbeatEvent = heartbeatPrefix + 'heartbeat'
         const payload = {
           agentName: config.agentName,
           id: uuidv4().toString(),
