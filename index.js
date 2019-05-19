@@ -61,7 +61,7 @@ class RedisAgent {
       if (config.heartbeatInterval) {
         let heartbeatPrefix = ''
         if (config.heartbeatPrefix != null) {
-          heartbeatPrefix = config.heartbeatPrefix + '_'
+          heartbeatPrefix = config.heartbeatPrefix + '-'
         }
         const heartbeatEvent = heartbeatPrefix + 'heartbeat'
         const payload = {
@@ -70,6 +70,7 @@ class RedisAgent {
           timestamp: new Date(),
         }
         self.client.publish(heartbeatEvent, JSON.stringify(payload))
+        self.client.set(heartbeatEvent, JSON.stringify(payload))
         setTimeout(self.heartbeat, config.heartbeatInterval)
       }
     }
