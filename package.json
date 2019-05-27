@@ -1,6 +1,6 @@
 {
   "name": "redis-agent",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A high level API for interacting with redis",
   "license": "MIT",
   "repository": "davidahouse/redis-agent",
